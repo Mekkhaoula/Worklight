@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>IADOReg</title>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    		<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+    		<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+        <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    		<style>
+            #rightBtn .ui-btn-inner {
+                width: 30px;
+                height: 30px;
+                margin: -3px;/*Modify to change icon position wrt the header*/
+                border: none !important;
+            }
+            .ui-icon-custom {
+                background: url(img/logo.png) 50% 50% no-repeat;
+                background-size: 30px 30px;
+                width: 30px;
+                height: 30px;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                margin: 0 !important;
+            }
+        </style>
+    		
+    	</head>
+<body id="c" style="display: none;" >
+ 
+        
+        <div data-role="page" id="index" data-theme='b'  >
+        <div data-role="panel" data-display="push" id="mypanel" data-theme="b">
+        <ul data-role="listview">
+            <li>Menu</li>
+            <li data-icon='false'><a href="#index">Acceuil</a></li>
+            <li data-icon='false'><a href="#p">Programme</a></li>
+            <li data-icon='false'><a href="#ca">Conditions d'accès</a></li>
+            <li data-icon='false'><a href="#ep">Équipe pédagogique </a></li>
+           
+     
+        </ul>
+    </div>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='b'>
+            <a href="#mypanel" data-role='button' data-inline='true'><i class='lIcon fa fa-bars'></i></a><a href="index.html" data-ajax="false" ><img id="theImg"  src="img/logo.png" height="25" width="30"  /></a>
+            <h1>Acceuil</h1>
+        </div>
+        
+            
+            <div data-role="content" data-theme='b' ><center><p ><h3>Master Informatque Appliquée au Développement OffShore</h3></p></center>
+          
+           
+            <center><h1>Objectifs et Débouchés</h1></center>
+            <center><p data-theme='a'>Le Master IADO repose sur des modules d'informatique avancée en Génie Logiciel et des techniques de traitement de l'information. Cet enseignement est complété par des modules d'ouverture et par des modules spécialisés du parcours Ingénierie de Développement Logiciel. L’équipe pédagogique du master est constituée de compétences locales, de collègues français du réseau OTI (Offshoring des Technologie de l’Information) et de partenaires socio-économiques.
+Le Master IADO est une formation débouchant sur des emplois de niveau ingénieur et chef de projet en informatique. Les titulaires de ce master trouvent principalement des emplois dans les fonctions d'encadrement du monde professionnel de l'informatique et des Nouvelles Technologies de l’Information. L'ensemble des compétences délivrées par cette formation fait des futurs diplômés des collaborateurs recherchés par les entreprises. Les lauréats peuvent également poursuivre leurs études en Doctorat.</p></center>
+            <p><center>Pour s'inscrire veuillez indiquer votre CNE :</center></p>
+            <form data-theme='c'>
+				<ul data-role="listview" data-inset="true" data-theme='c'>
+					<li data-role="fieldcontain" ><label for="cne" >CNE</label> 
+					<input type="text" name="cne" id="cne" value=""
+						data-clear-btn="true" placeholder="" ></li>
+					
+						
+						</ul>
+						<div  data-tap-toggle="false"   data-role="footer" data-tap-toggle="false" data-theme='b'>
+			<div data-role="navbar">
+				<ul>
+					
+					<li><a href="#formulaire" id="submit"><i class='blIcon fa fa-share' id="submitt"></i>Suivant</a></li>
+				</ul>
+			</div>
+		</div>
+		     </form>
+		     
+                
+            </div>
+        </div> 
+        <div data-role="page"  data-add-back-btn="true" data-back-btn-text="Back" id="formulaire">
+		<div data-role="content">
+			<div data-theme="b" data-role="header">
+                <h1>Informations  personnelles</h1>
+            </div>
+
+
+			<form>
+				<ul data-role="listview" data-inset="true">
+					<li data-role="fieldcontain"><label for="cin">CIN</label> 
+					<input type="text" name="cin" id="cin" value=""
+						data-clear-btn="true" placeholder=""></li>
+					<li data-role="fieldcontain"><label for="nom">Nom</label>
+						<input type="text" name="nom" id="nom"
+						value="" data-clear-btn="true" placeholder=""></li>
+					<li data-role="fieldcontain"><label for="prenom">Prenom</label>
+						<input type="text" name="prenom" id="prenom"
+						value="" data-clear-btn="true" placeholder=""><li data-role="fieldcontain"><label
+						for="email">Email </label> <input type="email"
+						name="email" id="email" value="" data-clear-btn="true"
+						placeholder=""></li></li>
+					<li data-role="fieldcontain"><label for="inputDate">Date
+							de naissance </label> <input type="date" name="date" id="date"
+						value="" data-clear-btn="true" placeholder=""></li>
+					<li data-role="fieldcontain"><label for="date">Address</label>
+						<input type="text" name="address" id="address"
+						value="" data-clear-btn="true" placeholder=""></li>
+
+				</ul>
+				<div data-position="fixed" data-tap-toggle="false" data-role="footer" data-tap-toggle="false" data-theme='b'>
+				<div data-role="navbar">
+				<ul>
+					
+					<li><a href="#formulaire1" id="submit1"><i class='blIcon fa fa-share' id="submitt"></i>Suivant</a></li>
+				</ul>
+			</div>
+			</div>
+			</form>
+		</div>
+		<div data-role="content">
+		
+		</div>
+		
+  </div>
+  <div data-role="page"  data-add-back-btn="true" data-back-btn-text="Back" id="formulaire1">
+		<div data-role="content">
+			<div data-theme="b" data-role="header">
+                <h1>Academic informations</h1>
+            </div>
+
+
+			<form>
+				<ul data-role="listview" data-inset="true">
+					<li data-role="fieldcontain"><label for="cin">Bac:</label> 
+					<input type="text" name="bac" id="bac" value=""
+						data-clear-btn="true" placeholder=""></li>
+						<li><label for="nom">Moyenne Generale:</label>
+						<input type="number" name="mback" id="mbac"
+						value="" data-clear-btn="true" placeholder=""></li>
+					<li data-role="fieldcontain"><label for="prenom">Bac+2:</label>
+						<input type="text" name="bac2" id="bac2"
+						value="" data-clear-btn="true" placeholder=""><li data-role="fieldcontain"><label
+						for="email">Moyenne generale: </label> <input type="number"
+						name="mb2" id="mb2" value="" data-clear-btn="true"
+						placeholder=""></li></li>
+					<li data-role="fieldcontain"><label for="inputDate">Bac+3
+							 </label> <input type="text" name="bac3" id="bac3"
+						value="" data-clear-btn="true" placeholder=""></li>
+					<li data-role="fieldcontain"><label for="date">moyenne generale</label><input type="number" name="mb3" id="mb3"
+						value="" data-clear-btn="true" placeholder=""></li>
+
+					
+				</ul><div data-position="fixed" data-tap-toggle="false" data-role="footer" data-tap-toggle="false" data-theme='b'>
+				<div data-role="navbar">
+				<ul>
+					
+					<li><a href="#formulaire1" id="submit2"><i class='blIcon fa fa-share' id="submit"></i>Valider</a></li>
+				</ul>
+			</div>
+			</div>
+			</form>
+		</div>
+		<div data-role="content">
+		
+		</div>
+		
+  </div>
+  
+   <div data-role="page" id="p" data-theme='b'  >
+        <div data-role="panel" data-display="push" id="mypanel" data-theme="b">
+        <ul data-role="listview">
+            <li>Menu</li>
+            <li data-icon='false'><a href="#index">Acceuil</a></li>
+            <li data-icon='false'><a href="#p">Programme</a></li>
+            <li data-icon='false'><a href="#ca">Conditions d'accès</a></li>
+            <li data-icon='false'><a href="#ep">Équipe pédagogique </a></li>
+           
+     
+        </ul>
+    </div>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='b'>
+            <a href="#mypanel" data-role='button' data-inline='true'><i class='lIcon fa fa-bars'></i></a><a href="index.html" data-ajax="false" ><img id="theImg"  src="img/logo.png" height="25" width="30"  /></a>
+            <h1>Programme</h1>
+        </div>
+        
+            
+            <div data-role="content" data-theme='b' ><center><p >M1	: Algorithmique et programmation avancée</p></center>
+<center><p >M2	: Apprentissage Machine</p></center>
+<center><p >M3	: Programmation Web</p></center>
+<center><p >M4	: Programmation Objet avancée</p></center>
+<center><p >M5	: Techniques de communication et langues</p></center>
+<center><p >M6	: Management et entreprenariat</p></center>
+</p></center>
+<center><p >M7	: Architecture et Framework JEE</p></center>
+<center><p >M8	: Systèmes embarquées</p></center>
+<center><p >M9	: Sécurité et Administration réseaux</p></center>
+<center><p >M10	: Préparation au contexte de l’Offshore</p></center>
+<center><p >M11	: Techniques d’optimisation</p></center>
+<center><p >M12	: Bases de données avancées</p></center>
+
+<center><p >M13	: Intelligence artificielle</p></center>
+<center><p >M14	: Sécurité des systèmes d’information</p></center>
+<center><p >M15	: Ingénierie logicielle</p></center>
+<center><p >M16	: Algorithmes stochastiques</p></center>
+<center><p >M17	: Outils et Méthode d’industrialisation</p></center>
+<center><p >M18 : Analyse et gestion de données massives (Big Data)</p></center>
+
+<center><p >M19-M24	: Stage en entreprise</p></center>
+            
+			
+		     
+                
+            </div>
+        </div>
+        
+        
+        
+    
+    <div data-role="page" id="ca" data-theme='b'  >
+        <div data-role="panel" data-display="push" id="mypanel" data-theme="b">
+       <ul data-role="listview">
+            <li>Menu</li>
+            <li data-icon='false'><a href="#index">Acceuil</a></li>
+            <li data-icon='false'><a href="#p">Programme</a></li>
+            <li data-icon='false'><a href="#ca">Conditions d'accès</a></li>
+            <li data-icon='false'><a href="#ep">Équipe pédagogique </a></li>
+           
+     
+        </ul>
+    </div>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='b'>
+            <a href="#mypanel" data-role='button' data-inline='true'><i class='lIcon fa fa-bars'></i></a><a href="index.html" data-ajax="false" ><img id="theImg"  src="img/logo.png" height="25" width="30"  /></a>
+            <h1>Condition d'acces</h1>
+        </div>
+        
+        
+        
+            
+            <div data-role="content" data-theme='b' >
+            <center><h2>Diplômes requis</h2></center>
+<center><p>Licence SMI, ou diplôme équivalent sous condition de pré-requis acquis</p>
+        <center><h2>Pré-requis pédagogiques spécifiques : </h2></center>
+         <p>Tous les modules du programme de licence SMI.</p>
+        <center><h2>Procédure de sélection :</h2></center>
+         <p>s’effectue en trois étapes : <br>
+- Inscription en ligne et sélection sur dossier <br>
+- Test en ligne <br>
+- Entretien</p></center>
+            
+			
+		     
+                
+            </div>
+        </div>
+	
+	
+	 <div data-role="page" id="ep" data-theme='b'  >
+        <div data-role="panel" data-display="push" id="mypanel" data-theme="b">
+        <ul data-role="listview">
+            <li>Menu</li>
+            <li data-icon='false'><a href="#index">Acceuil</a></li>
+            <li data-icon='false'><a href="#p">Programme</a></li>
+            <li data-icon='false'><a href="#ca">Conditions d'accès</a></li>
+            <li data-icon='false'><a href="#ep">Équipe pédagogique </a></li>
+           
+     
+        </ul>
+    </div>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='b'>
+            <a href="#mypanel" data-role='button' data-inline='true'><i class='lIcon fa fa-bars'></i></a><a href="index.html" data-ajax="false" ><img id="theImg"  src="img/logo.png" height="25" width="30"  /></a>
+            <h1>Condition d'acces</h1>
+        </div>
+            
+            <div data-role="content" data-theme='b' >
+            
+            <center><h2>M1	: Algorithmique et programmation avancée</h2>
+           <p>  Pr.  Belaïd AHIOD : Professeur Habilité</p></center>
+           
+           <center><h2>M2	: Apprentissage Machine</h2>
+           <p> Pr.  Noussaima EL KHATTABI : Professeur Assistant</p></center>
+           
+           <center><h2>M3	: Programmation Web</h2>
+           <p> r.  CHENFOUR Noureddine : Professeur Habilité</p></center>
+           
+           <center><h2>M4	: Programmation Objet avancée</h2>
+           <p> Pr.  RAOUI Younes : Professeur Assistant</p></center>
+           
+           <center><h2>M5	: Techniques de communication et langues</h2>
+           <p> Pr.  BOUSSAID Fatima : Professeur de l'Enseignement Supérieur</p></center>
+           
+           <center><h2>M6	: Management et entreprenariat</h2>
+           <p>Pr.  ZAMMAR Rachid : Professeur Assistant</p></center>
+           
+           <center><h2>M7	: Architecture et Framework JEE</h2>
+           <p> Pr.  EL BENANI Bouâzza : Professeur Habilité</p></center>
+           
+           <center><h2>M8	: Architectures avancée & Systèmes embarquées</h2>
+           <p>   Pr.  EL IMRANI Abdelhakim Ameur : Professeur de l'Enseignement Supérieur</p></center>
+           
+           
+            </div>
+        </div>
+
+	<script src="js/initOptions.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+</body>
+</html>

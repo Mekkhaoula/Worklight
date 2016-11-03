@@ -1,0 +1,399 @@
+<!DOCTYPE HTML><html>
+    <head>
+        <meta charset="UTF-8">
+        <title>IADOReg</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    		<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+		<!-- jQueryMobileCSS - original without styling -->
+        <link href="jquery/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+		<!-- nativeDroid core CSS -->
+        <link href="css/jquerymobile.nativedroid.css" rel="stylesheet">
+		<!-- nativeDroid: Light/Dark -->
+        <link href="css/jquerymobile.nativedroid.dark.css" id="jQMnDTheme" rel="stylesheet">
+		<!-- nativeDroid: Color Schemes -->
+        <link href="css/jquerymobile.nativedroid.color.green.css" id="jQMnDColor" rel="stylesheet">
+		<!-- jQuery / jQueryMobile Scripts -->
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		 WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "IADOReg",
+   "APP_ID": "IADOReg",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "2674313786",
+   "WORKLIGHT_PLATFORM_VERSION": "7.1.0.0",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/IADOReg\/android\/"
+};
+</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+        <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+        <link href="css/main.css" rel="stylesheet">
+        <script>window.$ = window.jQuery = WLJQ;</script>
+        <style>
+            #rightBtn .ui-btn-inner {
+                width: 30px;
+                height: 30px;
+                margin: -3px;/*Modify to change icon position wrt the header*/
+                border: none !important;
+            }
+            .ui-icon-custom {
+                background: url(img/logo.png) 50% 50% no-repeat;
+                background-size: 30px 30px;
+                width: 30px;
+                height: 30px;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                margin: 0 !important;
+            }
+        </style>
+    </head>
+    <body id="c" style="display: none;">
+        <div data-role="page" data-theme="b" id="index">
+            <div data-display="push" data-role="panel" data-theme="b" id="mypanel">
+                <ul data-role="listview">
+                    <li>Menu</li>
+                    <li data-icon="false">
+                        <a href="#">Acceuil</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#p">Programme</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ca">Conditions d'acc&egrave;s</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ep">&Eacute;quipe p&eacute;dagogique </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="header" data-tap-toggle="false" data-theme="b">
+                <a data-inline="true" data-role="button" href="#mypanel"><i class="lIcon fa fa-bars"></i></a><a data-ajax="false" href="index.html"><img height="25" id="theImg" src="img/logo.png" width="30"></a>
+                <h1>Acceuil</h1>
+            </div>
+            <div data-role="content" data-theme="b">
+                <center>
+                    <p></p>
+                    <h3>Master Informatque Appliqu&eacute;e au D&eacute;veloppement OffShore</h3>
+                    <p></p>
+                </center>
+                <center>
+                    <h1>Objectifs et D&eacute;bouch&eacute;s</h1>
+                </center>
+                <center>
+                    <p data-theme="a">Le Master IADO repose sur des modules d'informatique avanc&eacute;e en G&eacute;nie Logiciel et des techniques de traitement de l'information. Cet enseignement est compl&eacute;t&eacute; par des modules d'ouverture et par des modules sp&eacute;cialis&eacute;s du parcours Ing&eacute;nierie de D&eacute;veloppement Logiciel. L&rsquo;&eacute;quipe p&eacute;dagogique du master est constitu&eacute;e de comp&eacute;tences locales, de coll&egrave;gues fran&ccedil;ais du r&eacute;seau OTI (Offshoring des Technologie de l&rsquo;Information) et de partenaires socio-&eacute;conomiques.
+Le Master IADO est une formation d&eacute;bouchant sur des emplois de niveau ing&eacute;nieur et chef de projet en informatique. Les titulaires de ce master trouvent principalement des emplois dans les fonctions d'encadrement du monde professionnel de l'informatique et des Nouvelles Technologies de l&rsquo;Information. L'ensemble des comp&eacute;tences d&eacute;livr&eacute;es par cette formation fait des futurs dipl&ocirc;m&eacute;s des collaborateurs recherch&eacute;s par les entreprises. Les laur&eacute;ats peuvent &eacute;galement poursuivre leurs &eacute;tudes en Doctorat.</p>
+                </center>
+                <p>
+                    <center>Pour s'inscrire veuillez indiquer votre CNE :</center>
+                </p>
+                <form data-theme="c">
+                    <ul data-inset="true" data-role="listview" data-theme="c">
+                        <li data-role="fieldcontain">
+                            <label for="cne">CNE</label> 
+					<input data-clear-btn="true" id="cne" name="cne" placeholder="" type="text" value="">
+                        </li>
+                    </ul>
+                    <div data-role="footer" data-tap-toggle="false" data-theme="b">
+                        <div data-role="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#formulaire" id="submit"><i class="blIcon fa fa-share" id="submitt"></i>Suivant</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+        <div data-add-back-btn="true" data-back-btn-text="Back" data-role="page" id="formulaire">
+            <div data-role="content">
+                <div data-role="header" data-theme="b">
+                    <h1>Informations  personnelles</h1>
+                </div>
+                <form>
+                    <ul data-inset="true" data-role="listview">
+                        <li data-role="fieldcontain">
+                            <label for="cin">CIN</label> 
+					<input data-clear-btn="true" id="cin" name="cin" placeholder="" type="text" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="nom">Nom</label>
+						<input data-clear-btn="true" id="nom" name="nom" placeholder="" type="text" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="prenom">Prenom</label>
+						<input data-clear-btn="true" id="prenom" name="prenom" placeholder="" type="text" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="email">Email </label> <input data-clear-btn="true" id="email" name="email" placeholder="" type="email" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="inputDate">Date
+							de naissance </label> <input data-clear-btn="true" id="date" name="date" placeholder="" type="date" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="date">Address</label>
+						<input data-clear-btn="true" id="address" name="address" placeholder="" type="text" value="">
+                        </li>
+                    </ul>
+                    <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-theme="b">
+                        <div data-role="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#formulaire1" id="submit1"><i class="blIcon fa fa-share" id="submitt"></i>Suivant</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div data-role="content">
+            </div>
+        </div>
+        <div data-add-back-btn="true" data-back-btn-text="Back" data-role="page" id="formulaire1">
+            <div data-role="content">
+                <div data-role="header" data-theme="b">
+                    <h1>Academic informations</h1>
+                </div>
+                <form>
+                    <ul data-inset="true" data-role="listview">
+                        <li data-role="fieldcontain">
+                            <label for="cin">Bac:</label> 
+					<input data-clear-btn="true" id="bac" name="bac" placeholder="" type="text" value="">
+                        </li>
+                        <li>
+                            <label for="nom">Moyenne Generale:</label>
+						<input data-clear-btn="true" id="mbac" name="mback" placeholder="" type="number" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="prenom">Bac+2:</label>
+						<input data-clear-btn="true" id="bac2" name="bac2" placeholder="" type="text" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="email">Moyenne generale: </label> <input data-clear-btn="true" id="mb2" name="mb2" placeholder="" type="number" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="inputDate">Bac+3
+							 </label> <input data-clear-btn="true" id="bac3" name="bac3" placeholder="" type="text" value="">
+                        </li>
+                        <li data-role="fieldcontain">
+                            <label for="date">moyenne generale</label><input data-clear-btn="true" id="mb3" name="mb3" placeholder="" type="number" value="">
+                        </li>
+                    </ul>
+                    <div data-position="fixed" data-role="footer" data-tap-toggle="false" data-theme="b">
+                        <div data-role="navbar">
+                            <ul>
+                                <li>
+                                    <a href="#formulaire1" id="submit2"><i class="blIcon fa fa-share" id="submit"></i>Valider</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div data-role="content">
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="p">
+            <div data-display="push" data-role="panel" data-theme="b" id="mypanel">
+                <ul data-role="listview">
+                    <li>Menu</li>
+                    <li data-icon="false">
+                        <a href="#">Acceuil</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#p">Programme</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ca">Conditions d'acc&egrave;s</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ep">&Eacute;quipe p&eacute;dagogique </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="header" data-tap-toggle="false" data-theme="b">
+                <a data-inline="true" data-role="button" href="#mypanel"><i class="lIcon fa fa-bars"></i></a><a data-ajax="false" href="index.html"><img height="25" id="theImg" src="img/logo.png" width="30"></a>
+                <h1>Programme</h1>
+            </div>
+            <div data-role="content" data-theme="b">
+                <center>
+                    <p>M1	: Algorithmique et programmation avanc&eacute;e</p>
+                </center>
+                <center>
+                    <p>M2	: Apprentissage Machine</p>
+                </center>
+                <center>
+                    <p>M3	: Programmation Web</p>
+                </center>
+                <center>
+                    <p>M4	: Programmation Objet avanc&eacute;e</p>
+                </center>
+                <center>
+                    <p>M5	: Techniques de communication et langues</p>
+                </center>
+                <center>
+                    <p>M6	: Management et entreprenariat</p>
+                </center>
+                <p></p>
+                <center>
+                    <p>M7	: Architecture et Framework JEE</p>
+                </center>
+                <center>
+                    <p>M8	: Syst&egrave;mes embarqu&eacute;es</p>
+                </center>
+                <center>
+                    <p>M9	: S&eacute;curit&eacute; et Administration r&eacute;seaux</p>
+                </center>
+                <center>
+                    <p>M10	: Pr&eacute;paration au contexte de l&rsquo;Offshore</p>
+                </center>
+                <center>
+                    <p>M11	: Techniques d&rsquo;optimisation</p>
+                </center>
+                <center>
+                    <p>M12	: Bases de donn&eacute;es avanc&eacute;es</p>
+                </center>
+                <center>
+                    <p>M13	: Intelligence artificielle</p>
+                </center>
+                <center>
+                    <p>M14	: S&eacute;curit&eacute; des syst&egrave;mes d&rsquo;information</p>
+                </center>
+                <center>
+                    <p>M15	: Ing&eacute;nierie logicielle</p>
+                </center>
+                <center>
+                    <p>M16	: Algorithmes stochastiques</p>
+                </center>
+                <center>
+                    <p>M17	: Outils et M&eacute;thode d&rsquo;industrialisation</p>
+                </center>
+                <center>
+                    <p>M18 : Analyse et gestion de donn&eacute;es massives (Big Data)</p>
+                </center>
+                <center>
+                    <p>M19-M24	: Stage en entreprise</p>
+                </center>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="ca">
+            <div data-display="push" data-role="panel" data-theme="b" id="mypanel">
+                <ul data-role="listview">
+                    <li>Menu</li>
+                    <li data-icon="false">
+                        <a href="#">Acceuil</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#p">Programme</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ca">Conditions d'acc&egrave;s</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ep">&Eacute;quipe p&eacute;dagogique </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="header" data-tap-toggle="false" data-theme="b">
+                <a data-inline="true" data-role="button" href="#mypanel"><i class="lIcon fa fa-bars"></i></a><a data-ajax="false" href="index.html"><img height="25" id="theImg" src="img/logo.png" width="30"></a>
+                <h1>Condition d'acces</h1>
+            </div>
+            <div data-role="content" data-theme="b">
+                <center>
+                    <h2>Dipl&ocirc;mes requis</h2>
+                </center>
+                <center>
+                    <p>Licence SMI, ou dipl&ocirc;me &eacute;quivalent sous condition de pr&eacute;-requis acquis</p>
+                    <center>
+                        <h2>Pr&eacute;-requis p&eacute;dagogiques sp&eacute;cifiques : </h2>
+                    </center>
+                    <p>Tous les modules du programme de licence SMI.</p>
+                    <center>
+                        <h2>Proc&eacute;dure de s&eacute;lection :</h2>
+                    </center>
+                    <p>s&rsquo;effectue en trois &eacute;tapes : <br>
+- Inscription en ligne et s&eacute;lection sur dossier <br>
+- Test en ligne <br>
+- Entretien</p>
+                </center>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="ep">
+            <div data-display="push" data-role="panel" data-theme="b" id="mypanel">
+                <ul data-role="listview">
+                    <li>Menu</li>
+                    <li data-icon="false">
+                        <a href="#">Acceuil</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#p">Programme</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ca">Conditions d'acc&egrave;s</a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#ep">&Eacute;quipe p&eacute;dagogique </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="header" data-tap-toggle="false" data-theme="b">
+                <a data-inline="true" data-role="button" href="#mypanel"><i class="lIcon fa fa-bars"></i></a><a data-ajax="false" href="index.html"><img height="25" id="theImg" src="img/logo.png" width="30"></a>
+                <h1>Condition d'acces</h1>
+            </div>
+            <div data-role="content" data-theme="b">
+                <center>
+                    <h2>M1	: Algorithmique et programmation avanc&eacute;e</h2>
+                    <p>  Pr.  Bela&iuml;d AHIOD : Professeur Habilit&eacute;</p>
+                </center>
+                <center>
+                    <h2>M2	: Apprentissage Machine</h2>
+                    <p> Pr.  Noussaima EL KHATTABI : Professeur Assistant</p>
+                </center>
+                <center>
+                    <h2>M3	: Programmation Web</h2>
+                    <p> r.  CHENFOUR Noureddine : Professeur Habilit&eacute;</p>
+                </center>
+                <center>
+                    <h2>M4	: Programmation Objet avanc&eacute;e</h2>
+                    <p> Pr.  RAOUI Younes : Professeur Assistant</p>
+                </center>
+                <center>
+                    <h2>M5	: Techniques de communication et langues</h2>
+                    <p> Pr.  BOUSSAID Fatima : Professeur de l'Enseignement Sup&eacute;rieur</p>
+                </center>
+                <center>
+                    <h2>M6	: Management et entreprenariat</h2>
+                    <p>Pr.  ZAMMAR Rachid : Professeur Assistant</p>
+                </center>
+                <center>
+                    <h2>M7	: Architecture et Framework JEE</h2>
+                    <p> Pr.  EL BENANI Bou&acirc;zza : Professeur Habilit&eacute;</p>
+                </center>
+                <center>
+                    <h2>M8	: Architectures avanc&eacute;e &amp; Syst&egrave;mes embarqu&eacute;es</h2>
+                    <p>   Pr.  EL IMRANI Abdelhakim Ameur : Professeur de l'Enseignement Sup&eacute;rieur</p>
+                </center>
+            </div>
+        </div>
+        <script src="js/initOptions.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+    </body>
+</html>
